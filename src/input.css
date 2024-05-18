@@ -23,4 +23,9 @@
         src:local("poppins BoldItalic") , url(../fonts/Poppins-BoldItalic.ttf) format("truetype");
         font-display: swap;
     }
+
+    body{
+        background-image: url('../images/bg-body.jpg');
+        background-repeat: no-repeat;
+    }
 }

@@ -51,10 +51,10 @@ function TodoList() {
     }
 
   return (
-    <>
-        <div className='container flex flex-col items-center justify-center gap-2 sm:flex-row mt-28'>
+    <div className='container grid justify-items-center gap-20 sm:gap-4 lg:grid-cols-2 mt-28'>
+        <div className='flex flex-col items-center gap-2 sm:flex-row h-[40px]'>
             <form action="#" className='flex items-center shadow-md' onSubmit={(e) => addTodo(e)}>
-                <input type="text" className='p-2 bg-slate-500 focus:outline-0 text-white/80' value={todoTitle} onChange={(e) => titleHandler(e)} />
+                <input type="text" className='p-2 w-[220px] sm:w-[300px] bg-slate-500 focus:outline-0 text-white/80' value={todoTitle} onChange={(e) => titleHandler(e)} />
                 <div className='bg-slate-400 p-3 cursor-pointer transition-colors duration-200 hover:bg-slate-50' onClick={addTodo}><FaPlusSquare /></div>
             </form>
             <div className='shadow-md'>
@@ -66,7 +66,7 @@ function TodoList() {
             </div>
         </div>
 
-        <div className='mt-20 flex flex-col items-center'>
+        <div className='flex flex-col items-center'>
            {status === 'all' && todos.map(todo => {
             return <Todo key={todo.id} {...todo} onRemove={removeTodo} onEdit={editTodo}></Todo>
            })}
@@ -79,7 +79,7 @@ function TodoList() {
             return <Todo key={todo.id} {...todo} onRemove={removeTodo} onEdit={editTodo}></Todo>
            })}
         </div>
-    </>
+    </div>
   )
 }
 
